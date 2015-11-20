@@ -109,5 +109,18 @@ suite("Snippet", function() {
                 var testedSnippet = new Snippet('<| |>', SnippetType.DYNAMIC);
             });
         });
+
+    });
+
+    suite("Property Access", function () {
+        /**
+         * Test for correct property access
+         */
+        test("Correct property access trough getters", function() {
+            var testedSnippet = new Snippet('<| |>', SnippetType.DYNAMIC);
+
+            assert.equal(testedSnippet.getValue(), '<| |>');
+            assert.equal(testedSnippet.getType(), SnippetType.DYNAMIC);
+        })
     });
 });
