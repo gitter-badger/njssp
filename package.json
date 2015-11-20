@@ -1,0 +1,40 @@
+{
+  "name" : "njssp",
+  "version" : "0.0.0-alpha.0",
+  "description" : "Node.js Server Pages: Server Page module for creating dynamic, server side evaluated websites and web applications with node",
+  "keywords" : [
+    "njssp",
+    "Server Pages",
+    "Websites",
+    "Web Applications"
+  ],
+  "bugs" : {
+    "url" : "https://github.com/DevWurm/njssp/issues",
+    "email" : "devwurm@gmx.net"
+  },
+  "license" : "MIT",
+  "author" : {
+    "name" : "DevWurm",
+    "email" : "devwurm@gmx.net",
+    "url" : "https://github.com/DevWurm/"
+  },
+  "files" : [
+    "lib/",
+    "njssp.js"
+  ],
+  "main" : "njssp.js",
+  "repository" : "DevWurm/njssp",
+  "dependencies" : {
+    "enum" : "^2.2.0"
+  },
+  "devDependencies" : {
+    "mocha" : ">=2.3.3"
+  },
+  "engines" : {
+    "node" : ">=4.0.0"
+  },
+  "scripts" : {
+    "test" : "mocha"
+    "test-ci" : "mocha"
+  }
+}
