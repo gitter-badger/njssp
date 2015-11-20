@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "4.0.x"
+  - "4.1.x"
+  - "5.0.x"
+  - "5.1.x"
+
+install:
+  - "nvm install 5.0"
+  - "nvm install 5.1"
+  - "npm install"
+
+script: "npm run-script test-ci"
