@@ -37,7 +37,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "test-ci": "istanbul cover _mocha --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "test-cover": "istanbul cover _mocha"
+    "test-ci": "istanbul cover _mocha --report lcovonly",
+    "test-cover": "istanbul cover _mocha",
+    "send-coverage": "cat ./coverage/lcov.info | coveralls"
   }
 }
