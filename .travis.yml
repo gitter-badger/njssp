@@ -11,3 +11,5 @@ install:
   - "npm install"
 
 script: "npm run-script test-ci"
+
+after_script: "npm run-script send-coverage"
