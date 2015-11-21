@@ -36,9 +36,31 @@ var assert = require('assert');
 suite("PageInterpreter", function() {
 
     /**
+     * Suite for testing if the error, when calling the interpreter with a wrong file path, is thrown correctly
+     */
+    suite("Error behavior", function() {
+        test("Error when giving a wrong file path to PageInterpreter.interpretFile", function(done) {
+            var testedPageInterpreter = new PageInterpreter();
+
+            assert.throws(
+                function() {
+                    testedPageInterpreter.interpretFile("../resources/nonPresentFile.njssp", function(data) {
+                        done();
+                    });
+                },
+                function(err) {
+                    if ( (err instanceof Error) && (err.errno === "ENOENT") ) {
+                        return true;
+                    }
+                }
+            );
+        });
+    });
+
+    /**
      * Suite for testing the interpretation functions of the PageInterpreter class
      */
-    suite("interpretation", function() {
+    suite("Interpretation", function() {
 
         /**
          * Test of interpreting a String
@@ -57,7 +79,7 @@ suite("PageInterpreter", function() {
         /**
          * Test of interpreting a file
          */
-        test("file interpretation", function (done) {
+        test("File interpretation", function (done) {
             var filePath = "test/resources/testFile.njssp";
 
             var testedPageInterpreter = new PageInterpreter();
